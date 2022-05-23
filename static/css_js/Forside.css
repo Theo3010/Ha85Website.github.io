@@ -1,0 +1,105 @@
+.Forside__container {
+    position: relative;
+    display: flex;
+
+    width: 100%;
+    height: calc(95vh);
+
+}
+
+.next_page-container {
+    position: relative;
+    display: flex;
+
+    width: 100%;
+
+    bottom: 1em;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1;
+}
+
+.next_page {
+    position: relative;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+    width: 76em;
+    height: 2em;
+    
+    background-color: white;
+    
+    border-top: 2px solid black;
+    
+    border-radius: 100vh;
+
+}
+
+.next_page::before {
+    content: "";
+    position: absolute;
+    width: 3em;
+    height: 2em;
+    background-color: white;
+    top: -.2em;
+}
+
+.next_page-icon {
+    position: relative;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+    width: 2.5em;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+    top: -1.9em;
+
+    background-color: cyan;
+
+    border: 8px solid white;
+
+    box-shadow: 0px 0px 0px 2px black;
+
+    z-index: -1;
+}
+
+.next_page-icon::before {
+    content: "";
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    background-image: url(/static/images/Forside/DownArrow.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    z-index: 2;
+
+    animation: next_page-animation 1.5s ease-in-out 500ms infinite alternate forwards;
+}
+
+@keyframes next_page-animation {
+    0% {
+        transform: translateY(-20%);
+    }
+    100% {
+        transform: translateY(50);
+    }
+}
+
+.sponsor__container {
+    position: relative;
+    display: flex;
+
+    width: 100%;
+    height: calc(100vh - var(--footer-height) - var(--navbar-height--scrolled));
+}

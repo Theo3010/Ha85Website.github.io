@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="hamburger.css">
+    <script src="navbar.js" defer></script>
+</head>
+<body>
+    <nav class="navbar__container">
+        <ul class="navbar__content">
+            <li class="navbar__logo-contianer">
+                <a href="">
+                    <img src="../images/HA85_logo_147x147.png" alt="">
+                </a>
+            </li>
+            <template class="navbar__item-template">
+                <li class="navbar__item">
+                    <a href=""></a>
+                </li>
+            </template>
+        </ul>
+        
+        <button style="border: 0; background-color: transparent; cursor: pointer;" onclick="alert('42')">
+            <img class="navbar__search-icon" src="../images/search-icon.jpg" alt="">
+        </button>
+
+        <form action="" class="navbar__search-contianer">
+            <input type="search" class="navbar__search" placeholder="Search">
+            </input>
+        </form>
+        
+        <div class="navbar__hamburger" onclick="alert('test')">
+            <div class="navbar__hambruger-icon"></div>
+        </div>
+    </nav>
+</body>
+</html>

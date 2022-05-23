@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+
+
+{% block title %}
+    Forside
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css_js/Forside.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='Banner/banner.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='background/background.css')}}">
+    <script src="{{url_for('static', filename='background/background.js')}}" defer></script>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="Forside__container">
+    <div class="background__container">
+        <!-- <a><div class="background__box background__box--badminton"></div></a>
+        <a><div class="background__box background__box--esport"></div></a>
+        <a><div class="background__box background__box--gymnastikDans"></div></a>
+        <a><div class="background__box background__box--Hovdingebold"></div></a>
+        <a><div class="background__box background__box--Volleybold"></div></a>
+        <a><div class="background__box background__box--right background__box--lob"></div></a> -->
+        <a href="/fodbold"><div class="background__box background__box--fodbold"></div></a>
+        <a href="/handbold"><div class="background__box background__box--handbold"></div></a>
+        <a href="/badminton"><div class="background__box background__box--badminton"></div></a>
+        <a href="/esport"><div class="background__box background__box--esport"></div></a>
+        <a href="/gymnastik"><div class="background__box background__box--gymnastikDans"></div></a>
+        <a href="/hoevdingbold"><div class="background__box background__box--Hovdingebold"></div></a>
+        <a href="/volleyball"><div class="background__box background__box--Volleybold"></div></a>
+        <a href="/loeb"><div class="background__box background__box--right background__box--lob"></div></a>
+
+    </div>
+    
+    <div class="banner__container">
+            <div class="banner__content">
+                <div class="banner__texts">
+                    <span class="banner__texts banner__texts--Velkommen">Velkommen til</span>
+                    <span class="banner__texts banner__texts--H">H</span>
+                    <span class="banner__texts banner__texts--A">A</span>
+                    <span class="banner__texts banner__texts--85">85</span>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+{% endblock %}

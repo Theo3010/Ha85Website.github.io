@@ -1,0 +1,229 @@
+.banner__container {
+    position: relative;
+    display: flex;
+    
+    justify-content: center;
+    align-content: center;
+
+    width: 100%;
+    height: fit-content;
+
+    margin-top: 8em;
+}
+
+.banner__content {
+    position: relative;
+    display: flex;
+    
+    justify-content: center;
+    align-content: center;
+
+    width: 100%;
+    height: fit-content;
+
+}
+
+.banner__texts {
+    position: relative;
+
+    color: var(--color-text-primary);
+    
+    font: italic bold var(--font-size-big) Verdana;
+    text-shadow: 1px 1px 1px var(--shadow-color),
+        1px 2px 1px var(--shadow-color),
+        1px 3px 1px var(--shadow-color),
+        1px 4px 1px var(--shadow-color),
+        1px 5px 1px var(--shadow-color),
+        1px 6px 1px var(--shadow-color),
+        1px 7px 1px var(--shadow-color),
+        1px 8px 1px var(--shadow-color),
+        1px 9px 1px var(--shadow-color),
+        1px 10px 1px var(--shadow-color),
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+
+
+    transition: padding, 500ms ease-in-out;
+
+    z-index: 2;
+}
+
+.banner__texts--Velkommen::after {
+    content: "\a";
+    white-space: pre;
+}
+
+.banner__texts--A {
+    position: relative;
+    margin-left: var(--line-spacing-A);
+}
+.banner__texts--H,
+.banner__texts--A,
+.banner__texts--85 {
+    left: 25%;
+}
+
+
+.banner__texts:hover > .banner__texts--H {
+    left: 0%;
+    padding-right: var(--padding-right-H);
+}
+
+.banner__texts:hover > .banner__texts--A {
+    left: 0%;
+    padding-right: var(--padding-right-A);
+    margin-left: 0;
+}
+
+
+.banner__texts:hover > .banner__texts--85 {
+    left: 0%;
+    padding-left: var(--padding-left-85);
+}
+
+.banner__texts:hover > .banner__texts--Velkommen {
+    left: 25%;
+}
+
+
+/* Before's */
+.banner__texts:hover > .banner__texts--H::before {
+    content: "";
+    position: absolute;
+    
+    font-size: var(--font-size-small);
+    
+    margin-top: var(--margin-top-small);
+    margin-left: var(--margin-left-small);
+    animation: BannerTextsVinningdal 1000ms cubic-bezier(0, -.5, 1, 2.5) forwards;
+}
+
+@keyframes BannerTextsVinningdal {
+    0% {
+        content: "v";
+    }
+    10% {
+        content: "vi";
+    }
+    20% {
+        content: "vin";
+    }
+    30% {
+        content: "vinn";
+    }
+    40% {
+        content: "vinni";
+    }
+    50% {
+        content: "vinnin";
+    }
+    60% {
+        content: "vinning";
+    }
+    70% {
+        content: "vinningd";
+    }
+    80% {
+        content: "vinningda";
+    }
+    100% {
+        content: "vinningdal";
+    }
+}
+
+
+.banner__texts:hover > .banner__texts--A::before {
+    content: "";
+    position: absolute;
+    
+    font-size: var(--font-size-small);
+    
+    margin-left: var(--margin-left-small);
+    margin-top: var(--margin-top-small);
+
+    animation: BannerTextsKtivitetsforening 1000ms cubic-bezier(0, -.5, 1, 2.5) forwards;
+    
+}
+
+@keyframes BannerTextsKtivitetsforening {
+    /* aktivitetsforening */
+    0% {
+        content: "k";
+    }
+    5.55% {
+        content: "kt";
+    }
+    10% {
+        content: "kti";
+    }
+    15.55% {
+        content: "ktiv";
+    }
+    20% {
+        content: "ktivi";
+    }
+    25.55% {
+        content: "ktivit";
+    }
+    30% {
+        content: "ktivite";
+    }
+    35.55% {
+        content: "ktivitet";
+    }
+    40% {
+        content: "ktivitets";
+    }
+    45.55% {
+        content: "ktivitetsf";
+    }
+    50% {
+        content: "ktivitetsfo";
+    }
+    55.55% {
+        content: "ktivitetsfor";
+    }
+    60% {
+        content: "ktivitetsfore";
+    }
+    65.55% {
+        content: "ktivitetsforen";
+    }
+    70% {
+        content: "ktivitetsforeni";
+    }
+    75.55% {
+        content: "ktivitetsforenin";
+    }
+    100% {
+        content: "ktivitetsforening";
+    }
+    
+}
+
+.banner__texts:hover > .banner__texts--85::before {
+    content: "";
+    position: absolute;
+    
+    font-size: var(--font-size-small);
+    letter-spacing: 0px;
+    
+    margin-left: var(--margin-left-numbers);
+    margin-top: var(--margin-top-small);
+
+    animation: BannerTexts19 100ms cubic-bezier(0, -.5, 1, 2.5) forwards 1000ms;
+}
+
+@keyframes BannerTexts19 {
+    0% {
+        content: "";
+    }
+    50% {
+        content: "1";
+    }
+    100% {
+        content: "19";
+    }
+}

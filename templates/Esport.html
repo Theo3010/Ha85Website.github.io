@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% block title %}Esport{% endblock %}
+{% block content %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static', filename='Fodbold/Fodbold.css')}}">
+{% endblock %}
+
+
+<div class="content">
+    {% for i in Esportlist %}
+    <div class="main">
+        <div class="top">
+            <span class="name">{{Esportlist[i]["name"]}}</span>
+            <span class="pris">{{Esportlist[i]["pris"]}}</span>
+        </div>
+        <span class="date"> {{Esportlist[i]["date"]}}</span>
+        <button class="tilmeld">Tilmeld</button>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

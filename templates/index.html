@@ -1,0 +1,125 @@
+<!-- 
+TODO:
+BUG:
+  - flash on background do not work on the first one "fodbold" !important
+
+- Make the sidebars
+- navbar
+  - font type
+  - bigger font size
+  - index in js need to be working
+- navbar dropdown
+- navbar search
+- Make the footer better {DONE}
+
+- screen readers
+- maybe make social media icons my self (make them better plz i hate them)
+
+KOM.IT
+- 3D objects
+- animation
+- interactive
+- 60/30/10 color rule
+  white, red, cyan 
+- responsive design
+  - navbar
+  - footer
+  - text (vellkommen til ha85)
+    - H {break line} A {break line} 85
+    - etc. font size
+  - background (fodbold, handbold, badminton, esport, gymnastikdans, hovdingebold, volleybold, lob)
+- mobile first
+- SEO
+    - tables
+    - descriptions
+- use images good
+- typegraphy (fonts)
+- go big or home
+- 40px, 66px, 108px, 180px
+- use bold, italic, and bold italic
+- use a color scheme
+- use a background image
+- line spacing
+- readability
+-->
+
+<!DOCTYPE html>
+<!-- Set the website to Da-DK-->
+<html lang="da-DK" class="html_stretched responsive av-preloader-disabled av-default-lightbox  html_header_top html_logo_left html_main_nav_header html_menu_right html_slim html_header_sticky html_header_shrinking html_mobile_menu_tablet html_header_searchicon html_content_align_center html_header_unstick_top_disabled html_header_stretch_disabled html_av-submenu-hidden html_av-submenu-display-click html_av-overlay-side html_av-overlay-side-classic html_av-submenu-clone html_entry_id_734 av-cookies-consent-show-message-bar av-cookies-cookie-consent-enabled av-cookies-can-opt-out av-cookies-user-silent-accept avia-cookie-check-browser-settings av-no-preview html_text_menu_active ">
+<head>
+    <!--Title-->
+    <title>{% block title %}{% endblock %} - Ha85 - Hvinningdal Aktivitetsforening </title>
+
+    <meta charset="UTF-8" />
+    <meta name="description" content="Ha85 er en Aktivitetsforening i Silkeborg, Hvinningdal, som giver mulighed for at dyrker Fodbold, Håndbold, Badminton, Esport, Gymnastik, Høvdingebold, Volleyball, Løb. Vi sætter store forkus på Fællesskabet.">
+    <meta name="keywords" content="Aktivitet, Fællesskab, Sport">
+    <meta name="author" content="Theodor Vandsø Andersen, Hjalte lysdal heinze">
+    <meta name="robots" content="index, follow" />
+
+    <!-- mobile setting -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Soical logos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- css & js-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css_js/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='navbar/navbar.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='navbar/hamburger.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lota">
+    <script src="{{url_for('static', filename='css_js/main.js')}}" defer></script>
+    <script src="{{url_for('static', filename='navbar/navbar.js')}}" defer></script>
+    {% block head %}{% endblock %}
+
+  </head>
+
+  <body>
+      <!-- Navbar -->
+        <nav class="navbar__container">
+          <ul class="navbar__content">
+              <li class="navbar__logo-contianer">
+                  <a href="/">
+                      <img src="{{url_for('static', filename='images/HA85_logo.png')}}" alt="Ha85 Logo" class="navbar__logo">
+                  </a>
+              </li>
+              {% for i in navbar %}
+                  <li class="navbar__item {{'navbar__item--active' if i==active else ''}}">
+                      <a href="{{'/' + i}}">{{i}}</a>
+                  </li>
+              {% endfor %}
+          </ul>
+          
+          <button class="navbar__search-icon"  style="border: 0; background-color: transparent; cursor: pointer;" onclick="alert('42')">
+              <img src="{{url_for('static', filename='images/search-icon.jpg')}}" alt="">
+          </button>
+
+          <form action="" class="navbar__search-contianer">
+              <input type="search" class="navbar__search" placeholder="Search">
+              </input>
+          </form>
+          
+          <div class="navbar__hamburger">
+              <div class="navbar__hambruger-icon"></div>
+          </div>
+      </nav>
+    
+    <!-- Main content-->
+    {% block content %}{% endblock %}
+    
+    <!-- Footer-->
+          <footer>
+            <div class="Container-Footer">
+              <span class="copyright">
+                Copyright © 2022 | College360, HTX student procjet | Bredhøjvej 8, 8600 Silkeborg | DISCLAIMER: this is not a real website, but for education purpose only
+              </span>
+
+              <ul class="social-links">
+                <a href="https://www.facebook.com/HvinningdalAktivitetsforening/" class="fa fa-facebook" target="_blank"></a>
+                <a href="https://www.instagram.com/ha85_silkeborg/" class="fa fa-instagram" target="_blank"></a>
+              </ul>
+            </div>
+
+          </footer>
+    
+  </body>
+</html>  

@@ -1,0 +1,152 @@
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.background__container {
+  position: absolute;
+  display: flex;
+  
+  height: calc(100vh - 8em);
+
+  width: 100vw;
+
+  margin-top: 5em;
+  
+  overflow: hidden;
+  
+  z-index: 1;
+}
+
+.background__container a {
+  position: relative;
+  width: 12.5%;
+  height: inherit;
+  
+}
+
+.background__box {
+  position: relative;
+  
+  width: 100%;
+  height: inherit;
+
+  box-shadow: 2px 2px 5px black;
+
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.background__box--fodbold,
+.background__box--fodbold::before {
+  background-image: url(/static/images/Forside/Fodbold.jpg);
+}
+
+
+.background__box--handbold,
+.background__box--handbold::before {
+  background-image: url(/static/images/Forside/handbold.jpg);
+}
+
+.background__box--badminton,
+.background__box--badminton::before {
+  background-image: url(/static/images/Forside/badminton.png);
+}
+
+.background__box--esport,
+.background__box--esport::before {
+  background-image: url(/static/images/Forside/esport.jpg);
+}
+
+.background__box--gymnastikDans,
+.background__box--gymnastikDans::before {
+  background-image: url(/static/images/Forside/gymnastikDans.jpg);
+}
+
+.background__box--Hovdingebold,
+.background__box--Hovdingebold::before {
+  background-image: url(/static/images/Forside/Hovdingebold.jpg);
+}
+
+.background__box--Volleybold,
+.background__box--Volleybold::before {
+  background-image: url(/static/images/Forside/volleyball.jpg);
+}
+
+.background__box--lob,
+.background__box--lob::before {
+  background-image: url(/static/images/Forside/lob.jpg);
+}
+
+
+.background__box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.background__box:hover::before {
+  animation: inspect 500ms ease-in-out 500ms forwards;
+  box-shadow: 2px 2px 5px black;  
+  z-index: 1;
+}
+
+.background__box:hover::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  left: -50%;
+  z-index: 2;
+  animation: delay 500ms ease-in-out 500ms forwards;
+}
+
+.background__box--right:hover::before {
+  animation: inspect-right 500ms ease-in-out 500ms forwards;
+}
+
+@keyframes delay {
+  100% {
+    background: var(--background);
+  }
+}
+
+@keyframes inspect-right {
+  0% {
+    width: 100%;
+    left: 0%;
+  }
+  100% {
+    left: -50%;
+    width: 150%;
+    box-shadow: 0px 0px 10px black;
+    transform: var(--transform);
+
+  }
+}
+
+@keyframes inspect {
+  0% {
+    width: 100%;
+    left: 0%;
+  }
+  100% {
+    left: -50%;
+    width: 200%;
+    box-shadow: 0px 0px 10px black;
+    transform: var(--transform);
+    border-radius: 2vh;
+
+  }
+}

@@ -1,0 +1,226 @@
+.navbar__container {
+    position: fixed;
+    display: inline-flex;
+    flex-direction: row;
+    
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: var(--navbar-height);
+    
+    border-bottom: 2px black solid;
+    background-color: var(--Navbar-background-color);
+
+    z-index: 4;
+
+
+}
+
+.navbar__content {
+    display: inline-flex;
+    
+    list-style-type: none;
+    align-items: center;
+    
+    margin: 0.5em;
+    padding: 0;
+    
+    z-index: 3;
+
+    transition: all 500ms ease-in-out;
+}
+
+
+.navbar__content::before {
+    content: "";
+    position: absolute;
+    
+    width: var(--navbar-content-width);
+    height: 1.5em;
+    margin-left: -.5em;
+    
+    top: 4.5em;
+
+    background-color: var(--Navbar-background-color);
+    
+    border-bottom: 2px black solid;
+    border-radius: 100vh;
+
+    z-index: -1;
+}
+
+.navbar__container--scrolled {
+    animation: navbar-scrolled 500ms ease-in-out 0ms 1 alternate forwards;
+}
+
+@keyframes navbar-scrolled {
+    0% {
+        height: 5em;
+    }
+    100% {
+        height: var(--navbar-height--scrolled);
+    }
+}
+
+.navbar__container--scrolled .navbar__logo-contianer img {
+    animation: navbar-scrolled--img 500ms ease-in-out 0ms 1 alternate forwards;
+    top: .5em;
+
+}
+
+@keyframes navbar-scrolled--img {
+    100% {
+        width: 3em;
+    }   
+}
+
+.navbar__logo-contianer img {
+    position: relative;
+    width: var(--navbar-img-width);
+}
+
+.navbar__container--scrolled .navbar__content::before {
+    animation: navbar-scrolled--before 500ms ease-in-out 0ms 1 alternate forwards;
+}
+
+@keyframes navbar-scrolled--before {
+    100% {
+        top: calc(4.2em - 2.5em);
+        width: 69.2em;
+    }
+}
+
+.navbar__content a {
+    text-decoration: none;
+    color: var(--navbar-font-color);
+    
+    font-family: var(--navbar-font-type);
+    font-size: var(--navbar-font-size);
+    font-weight: 400;
+    line-height: 1rem;
+    
+    padding: 0.5rem 1rem;
+}
+
+.navbar__content a:hover {
+    color: #333333;
+}
+
+.navbar__item--active a {
+    font-weight: bold;
+}
+
+
+.navbar__search-container {
+    position: relative;
+}
+
+.navbar__search-icon img {
+    position: relative;
+    width: 3.25em;
+    z-index: 10;
+}
+
+.navbar__search {
+    display: none;
+    width: calc(6rem + 5px);
+    height: calc(1.2rem + 5px);
+
+    border-radius: 0.25rem;
+    border: 1px solid rgba(92, 92, 92, .5);
+    
+    background-color: var(--Navbar-background-color);
+    
+    font-size: 15px;
+}
+
+.navbar__hamburger {
+    display: none !important;
+}
+
+@media (max-width: 75em) {
+    .navbar__item {
+        display: none;
+    }
+    .navbar__search-icon {
+        display: none;
+    }
+    .navbar__container {
+        justify-content: space-between;
+    }
+    .navbar__hamburger {
+        display: grid !important;
+    }
+
+    .navbar__container--open {
+        align-items: baseline;
+        position: absolute;
+    }
+    .navbar__container--open .navbar__content {
+        flex-direction: column;
+        height: fit-content;
+    }
+    .navbar__container--open.navbar__container--scrolled {
+        height: fit-content !important;
+    }
+    .navbar__container--open .navbar__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-top: 1px black solid;
+        padding: 0.5em 0;
+        margin: 0em 1em;
+    }
+    .navbar__container--open .navbar__item a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar__container--open .navbar__logo {
+        width: var(--navbar-img-width) !important;
+        margin-bottom: 0.75em;
+    }
+
+    .navbar__container--open .navbar__hamburger {
+        transform: translateY(-1.95em);
+    }
+
+    .navbar__container--open .navbar__hambruger-icon {
+        box-shadow: 0px 0px var(--menu-color);
+        animation: hamburgerRotate 500ms ease-in-out 0ms 1 alternate forwards;
+    }
+
+    .navbar__container--open .navbar__hambruger-icon::before {
+        animation: hambruger-iconRotate 500ms ease-in-out 0ms 1 alternate forwards;
+    }
+
+    .navbar__container--open + .Forside__container {
+        filter: brightness(75%);
+    }
+
+    .navbar__content::before {
+        content: none;
+    }
+}
+
+
+
+@keyframes hamburgerRotate {
+    0% {
+        background: transparent !important;
+    }
+    100% {
+        transform: rotate(45deg);
+        background: var(--menu-color);
+    }
+}
+
+@keyframes hambruger-iconRotate {
+    100%{
+        transform: rotate(-90deg);
+        top: 0;
+    }
+}
