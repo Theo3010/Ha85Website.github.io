@@ -5,3 +5,6 @@ Ha85, also know as Hvinningdal Aktivitetsforening 1985, is an organisation in De
 
 <h1>Development</h1>
 This is my first time trying to make an realy website. I have been working with website a bit, but only basic knowledge.
+
+<h1>Build</h1>
+This is a flask program, wich means it's running with python. That means to run the website by your self, you have to have python. If so download the entire folder and run the python program.
