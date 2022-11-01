@@ -3,9 +3,9 @@
 
 Ha85, also know as Hvinningdal Aktivitetsforening 1985, is an organisation in Denmark, and this is NOT THE OFFICIEL website for that organisation. This is a school projcet to remake a already exiting webiste. And this is my atempt.
 
-<h1>Preview<h1>
+<h1>Preview</h1>
 Main page, with interactive background and titile. The background is clickable and will redirect you to the corresponding page.
-![image](https://user-images.githubusercontent.com/74210896/199303189-c3d92dec-d5fb-48ce-8c78-5095bba8595f.png)
+<img src="https://user-images.githubusercontent.com/74210896/199303189-c3d92dec-d5fb-48ce-8c78-5095bba8595f.png"/>
 
 When hoving over the title it expands to the whole name.
 ![image](https://user-images.githubusercontent.com/74210896/199306615-617e06aa-72da-4e03-b246-fb8794d3a707.png)
